@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	#before_action :set_user,only: [:show,:edit,:update,:destroy]
 def index
-  if params[:search].present?
+  if params[:search]!="undefined"
     @users = User.where("first_name LIKE ? or email Like ?","%#{params[:search]}%","%#{params[:search]}%")
   else
     @users = User.all
