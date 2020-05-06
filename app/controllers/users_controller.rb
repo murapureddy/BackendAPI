@@ -69,7 +69,7 @@ end
     @user = User.find(params[:id])
     @user.destroy
     redirect_to '/users'
-  end
+ end
 
   #def set_user
    #  @user = User.find(params[:id])
@@ -77,6 +77,6 @@ end
  
   private
     def user_params
-      params.require(:user).permit(:first_name, :email,:password,address: {})
+      params.require(:user).permit(:first_name, :email,:password,:image,address: {})
     end
 end
